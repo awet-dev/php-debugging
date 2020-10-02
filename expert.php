@@ -87,3 +87,13 @@ function randomHeroName() {
 }
 
 echo "Here is the name: " . combineNames();
+
+new_exercise(7);
+
+// error: type error, solved by change the string to init just by adding 0 to it
+function copyright(int $year) {
+    return "&copy; $year BeCode";
+}
+//print the copyright
+echo copyright(date('Y')+0);
+
