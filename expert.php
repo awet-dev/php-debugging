@@ -136,3 +136,17 @@ echo isLinkValid('https://google.com');
 echo isLinkValid('http://google.com');
 //VALID link
 echo isLinkValid('http://google.com/test.txt');
+
+new_exercise(10);
+// put the length of $areTheseFruits in variable, b/c every time it will be changing;
+$areTheseFruits = ['apple', 'bear', 'beef', 'banana', 'cherry', 'tomato', 'car'];
+$validFruits = ['apple', 'pear', 'banana', 'cherry', 'tomato'];
+//from here on you can change the code
+$length = count($areTheseFruits);
+for($i=0; $i < $length; $i++) {
+    if(!in_array($areTheseFruits[$i], $validFruits)) {
+        unset($areTheseFruits[$i]);
+    }
+}
+var_dump($areTheseFruits);//do not change this
+
