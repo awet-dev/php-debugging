@@ -59,6 +59,31 @@ for ($letter = 'a'; $letter <= 'z'; $letter++) {
 print_r($arr); // Array ([0] => a, [1] => b, [2] => c, ...) a-z alfabetical array
 
 
+new_exercise(6);
+// === Final exercise ===
+// add semi-colon to $hero_lastnames array at the end
+// add & to the $param in order to modify the element of the array
+// fix the syntax error of implode function by reversing the parameters
+// make the randomHeroName returns the random name
+// and also make the combineNames return the result of impolde function
+$arr = [];
 
+function combineNames($str1 = "", $str2 = "") {
+    $params = [$str1, $str2];
+    foreach($params as &$param) {
+        if ($param == "") {
+            $param = randomHeroName();
+        }
+    }
+    return implode(" - ", $params);
+}
 
+function randomHeroName() {
+    $hero_firstnames = ["captain", "doctor", "iron", "Hank", "ant", "Wasp", "the", "Hawk", "Spider", "Black", "Carol"];
+    $hero_lastnames = ["America", "Strange", "man", "Pym", "girl", "hulk", "eye", "widow", "panther", "daredevil", "marvel"];
+    $heroes = [$hero_firstnames, $hero_lastnames];
+    return $heroes[rand(0,count($heroes)-1)][rand(0, 10)];
 
+}
+
+echo "Here is the name: " . combineNames();
