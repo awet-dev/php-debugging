@@ -116,3 +116,23 @@ echo login('john@example.be', 'dfgidfgdfg');
 echo login('wrong@example.be', 'wrong');
 //you can change things again!
 
+new_exercise(9);
+// to check if a word exist in another make the condition (!== false instead of == true or === true)
+function isLinkValid(string $link) {
+    $unacceptables = array('https:','.doc','.pdf', '.jpg', '.jpeg', '.gif', '.bmp', '.png');
+
+    foreach ($unacceptables as $unacceptable) {
+        if (strpos($link, $unacceptable) !== false) {
+            return 'invalid link<br />';
+        }
+    }
+    return  'VALID link<br />';
+}
+//invalid link
+echo isLinkValid('http://www.google.com/hack.pdf');
+//invalid link
+echo isLinkValid('https://google.com');
+//VALID link
+echo isLinkValid('http://google.com');
+//VALID link
+echo isLinkValid('http://google.com/test.txt');
