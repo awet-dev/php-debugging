@@ -45,6 +45,19 @@ print_r($week1);
 
 new_exercise(5);
 
+// === Exercise 5 ===
+// expected: to display a-z, solution: break if it start getting "aa"
+$arr = [];
+for ($letter = 'a'; $letter <= 'z'; $letter++) {
+    if ($letter === 'aa') {
+        break;
+    } else {
+        array_push($arr, $letter);
+    }
+}
+
+print_r($arr); // Array ([0] => a, [1] => b, [2] => c, ...) a-z alfabetical array
+
 
 
 
