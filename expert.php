@@ -32,6 +32,19 @@ echo substr($str, 0, 10);
 
 new_exercise(4);
 
+// === Exercise 4 ===
+// error: the result of substr was not pushed to week
+// solution: create new array and push it to that array
+$week1 = array();
+foreach($week as $day) {
+    $day = substr($day, 0, strlen($day)-3);
+    array_push($week1, $day);
+}
+
+print_r($week1);
+
+new_exercise(5);
+
 
 
 
